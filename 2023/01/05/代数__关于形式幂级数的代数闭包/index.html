@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>代数__关于形式幂级数的代数闭包 | Codecode 的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="复数域上”变量为 $t$ 的形式幂级数集合”定义为  K&#x3D;\mathbb{C}((t))&#x3D;\left\{\sum_{m&#x3D;{m_{0}}}^{\infty}a_mt^m\mid m_0\in\mathbb{Z},a_m\in\mathbb{C}\right\}.其中求和对全体不小于 $m_0$ 的整数求和, 在这个集合上可以定义显然的加法和乘法, 加法即为逐项相加, 乘法为展开后再求和. 类似地我们">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代数__关于形式幂级数的代数闭包">
+<meta property="og:url" content="http://example.com/2023/01/05/%E4%BB%A3%E6%95%B0__%E5%85%B3%E4%BA%8E%E5%BD%A2%E5%BC%8F%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E4%BB%A3%E6%95%B0%E9%97%AD%E5%8C%85/index.html">
+<meta property="og:site_name" content="Codecode 的个人博客">
+<meta property="og:description" content="复数域上”变量为 $t$ 的形式幂级数集合”定义为  K&#x3D;\mathbb{C}((t))&#x3D;\left\{\sum_{m&#x3D;{m_{0}}}^{\infty}a_mt^m\mid m_0\in\mathbb{Z},a_m\in\mathbb{C}\right\}.其中求和对全体不小于 $m_0$ 的整数求和, 在这个集合上可以定义显然的加法和乘法, 加法即为逐项相加, 乘法为展开后再求和. 类似地我们">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-04T16:04:29.000Z">
+<meta property="article:modified_time" content="2023-01-04T16:15:39.053Z">
+<meta property="article:author" content="Codecode">
+<meta property="article:tag" content="Method__Valuation">
+<meta property="article:tag" content="Type__Alegebra">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Codecode 的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Codecode 的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-代数__关于形式幂级数的代数闭包" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/05/%E4%BB%A3%E6%95%B0__%E5%85%B3%E4%BA%8E%E5%BD%A2%E5%BC%8F%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E4%BB%A3%E6%95%B0%E9%97%AD%E5%8C%85/" class="article-date">
+  <time class="dt-published" datetime="2023-01-04T16:04:29.000Z" itemprop="datePublished">2023-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      代数__关于形式幂级数的代数闭包
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>复数域上”变量为 $t$ 的形式幂级数集合”定义为</p>
+<script type="math/tex; mode=display">
+K=\mathbb{C}((t))=\left\{\sum_{m={m_{0}}}^{\infty}a_mt^m\mid m_0\in\mathbb{Z},a_m\in\mathbb{C}\right\}.</script><p>其中求和对全体不小于 $m_0$ 的整数求和, 在这个集合上可以定义显然的加法和乘法, 加法即为逐项相加, 乘法为展开后再求和. 类似地我们也可以对正整数 $n$ 定义”变量为 $t^{\frac{1}{n}}$ 的形式幂级数集合”</p>
+<script type="math/tex; mode=display">
+K_n=\mathbb{C}((t^{\frac{1}{n}}))=\left\{\sum_{m={m_{0}}}^{\infty}a_mt^{\frac{m}{n}}\mid m_0\in\mathbb{Z},a_m\in\mathbb{C}\right\}.</script><p>这将在之后的叙述中用到.</p>
+<p><strong>特别注意</strong>, 这里的形式幂级数可能不同于通常的定义——即并不是从第 $0$ 项开始, 而是允许有限个负数项.</p>
+<hr>
+<p>我们首先要说明集合 $\mathbb{C}((t))$ 事实上是一个域, 这只需要验证<strong>每个非零元都有逆</strong>, 除此之外的成为域的其它要求都是显然的. </p>
+<p>为此考虑某个非零元 $\;a=\sum\limits_{m=s}^{\infty}a_mt^m(a_{s}\neq 0)$, 待定系数 $b_i(i\geq t)$ 来使得 $b=\sum\limits_{i=t}^{\infty}b_it^i$ 是它的逆. 只需要依次取 </p>
+<script type="math/tex; mode=display">
+t=-s,\quad b_{t}=a_{s}^{-1},\quad b_{t+i}=-a_{s}^{-1}(b_{t+i-1}a_{s+1}+b_{t+i-2}a_{s+2}+\cdots+b_{t}a_{s+i}),</script><p>就找到了这样的 $b=a^{-1}$, 故 $\mathbb{C}((t))$ 是域.</p>
+<hr>
+<p><strong>本文旨在说明: 域 $K=\mathbb{C}((t))$ 的代数闭包 $\overline{K}$ 就是 $\bigcup_{n=1}^{\infty}K_n$</strong>, 即证明如下的结论</p>
+<blockquote>
+<p align="left"><diy style="font-size: 16px">定理: 对任意多项式 $T^d+a_{1}T^{d-1}+\cdots+a_{d-1}T+a_d\in K[T]$ 都存在正整数 $n$, 使得它有一个根在 $K_n$ 中.</diy></p>
+
+</blockquote>
+<p>为此先做一些准备工作. </p>
+<p>在 $K$ 上可以定义一个赋值 $v:K\rightarrow\mathbb{Z}\cup\{\infty\}$, 满足</p>
+<script type="math/tex; mode=display">
+v(0)=\infty,\quad  f=\sum_{i\geq m}a_iz^i(a_m\neq 0) \;\;\Leftrightarrow\;\; v(f)=m</script><p>我们指出这一赋值满足 $v(fg)=v(f)v(g)$ 且 $v(f+g)\geq \min\{v(f),v(g)\}$. 这一赋值可以按如下方式保持性质地拓展到每个 $K_n$ 中, 即 $v:K_n\rightarrow\tfrac{1}{n}\mathbb{Z}\cup\{\infty\}$ 满足</p>
+<script type="math/tex; mode=display">
+f=\sum\limits_{\mu\geq\lambda,n\mu\in\mathbb{Z}}a_{\mu}z^{\mu}(a_\lambda\neq 0)\;\;\Leftrightarrow \;\; v(f)=\lambda.</script><p>最后我们得到了在整个 $\overline{K}$ 上的赋值 $v:\overline{K}\rightarrow\mathbb{Q}\cup\{\infty\}$. 进一步地, 记 $O_n=\mathbb{C}[[z^{1/n}]]=\{f\in K_n|v(f)\geq 0\}$ 以及 $O=\{f\in K|v(f)\geq 0\}$, 则容易发现它们是环且商域分别是 $K_n$ 和 $K$. 元素 $\pi:=z^{1/n}\in O_n$ 是唯一的极大理想且 $O_n/\pi O_n=\mathbb{C}$.</p>
+<p>称环 $O_n$ 上的某个多项式 $P$ 的 <strong>约化(reduction)</strong> 是指各项系数模 $\pi$ 得到的(即只考虑各系数的常数项作为新的系数的)复系数多项式, 用 $\overline{P}$ 记之.</p>
+<p>接下来正式证明此结论.</p>
+<hr>
+<p>$\textit{Proof:}$ 对次数 $d$ 归纳, $d=1$ 时由 $K$ 中每个非零元都有逆, 结论直接成立. </p>
+<p>下设次数小于 $d$ 时结论都成立, 考虑 $d$ 时. </p>
+<p>记 $\lambda=\min\{\tfrac{v(a_i)}{i}|1\leq i\leq d\}$ 并做换元 $T=z^{-\lambda} E$, 新的多项式具有形式 </p>
+<script type="math/tex; mode=display">
+P=E^d+b_1E^{d-1}+\cdots+b_{d-1}E+b_d,</script><p>其中 $b_1,b_2,\cdots,b_d\in K_m$, 这里 $m$ 是 $\lambda$ 的分母. 现在 $\min v(b_i)=0$. 考虑约化 $\overline{P}\in \mathbb{C}[E]$, 注意到 $\min v(b_i)=0$ 表明 $\overline{P}$ 至少有两个非零系数, 且只要我们证明了 $v(b_1)=0$ 就有 $m=1$ 且 $\lambda$ 是整数. 证明结论的关键是如下的引理:</p>
+<blockquote>
+<p align="left"><diy style="font-size: 16px"><font color='red'>引理(Classical Hensel's Lemma)</font> 设 $\overline{P}=FG$, 其中 $F,G\in\mathbb{C}[E]$ 是一元多项式且满足 $\operatorname{gcd}(F,G)=1$, 则存在一种方式将 $P$ 分解为一元多项式之积 $P=AB$, 且使得 $\overline{A}=F,\overline{B}=G$. </diy></p>
+
+</blockquote>
+<p><strong>引理的证明</strong> $\;\;$ 同样是使用待定系数法, 先令 $A_0=F,B_0=G$, 则在约化意义下有 $P=AB$. 假设已经找到 $A_k,B_k$ 使得在 $\operatorname{mod}\pi^k$ 意义下有 $A_kB_k\equiv P$, 待定 $R,S\in\mathbb{C}[E]$ 并令 $A_{k+1}=A_k+\pi^kR$, $B_{k+1}=B_k+\pi^kS$, 于是只需要满足 </p>
+<script type="math/tex; mode=display">
+A_0S+B_0R\equiv \dfrac{P-A_kB_k}{\pi^k}\pmod{\pi}.</script><p>其中 $\operatorname{gcd}(A_0,B_0)=\operatorname{gcd}(F,G)=1$, $\text{Bezout}$ 定理表明在 $\deg S&lt;\deg B_0,\deg R&lt;\deg A_0$ 时有唯一解.故找到了在 $\operatorname{mod} \pi^{k+1}$ 意义下的解. 最后令 </p>
+<script type="math/tex; mode=display">
+A=\lim_{k\rightarrow\infty}A_k,\quad B=\lim_{k\rightarrow\infty}B_k</script><p>即可(这里的 $\text{limit}$ 是对每个系数独立地取极限), 容易验证它们具有前述的性质.</p>
+<p><strong>回到原结论的证明</strong> $\;\;$ 由代数基本定理, 多项式 $\overline{P}$ 在 $\mathbb{C}$ 中有唯一分解. 如果 $\overline{P}$ 在复数域中有至少两个不同根, 由引理知可以将 $P$ 分解为 $AB$, 次数严格减少, 用归纳假设即可. 否则 $\overline{P}$ 只有一个根, 即某个 $c_0\in\mathbb{C}$ 使得 $\overline{P}=(E-c_0)^d$. 我们在证明引理之前已经指出, $\overline{P}$ 有至少两个非零系数, 所以 $c_0\neq 0$. 这表明 $\overline{P}$ 的 $d+1$ 个系数都非零, 也就是 $P$ 对应的每一个 $v(b_i)=0$, 故 $m=1$ 且 $\lambda$ 是整数.</p>
+<p>我们可以将 $P$ 表示为 </p>
+<script type="math/tex; mode=display">
+P=(E-c_0)^d+e_1(E-c_0)^{d-1}+\cdots+e_{d-1}(E-c_0)+e_d,</script><p>则其中每个 $v(e_i)&gt;0$, 因为 $P$ 的约化只有 $(E-c_0)^d$. 记 $\lambda_1=\min\{\frac{v(e_i)}{i}|1\leq i\leq d\}$ 并作换元 $E=c_0+z^{\lambda_1}E^{\star}$, 重复上面的讨论, 在满足引理的使用条件时就可以用引理降低次数, 用归纳假设完成证明, 否则仍然只有 $d$ 重根 $c_1$, 同样的讨论表明 $\lambda_1$ 是整数. 再作变量代换 $E=c_0+c_1z^{\lambda_1}+z^{\lambda_2}E^{\star\star}$, 这里 $0&lt;\lambda_1&lt;\lambda_2$, 并继续讨论. 总之, 若有限次换元内可以找到某一次使得约化多项式不是 $d$ 重根, 则可以将其做满足引理条件的分解, 并用引理和归纳假设完成证明; 否则, 每一次都是 $d$ 重根, 则得到 </p>
+<script type="math/tex; mode=display">
+f:=c_0+c_1z^{\lambda_1}+c_2z^{\lambda_2}+\cdots,</script><p>其中 $0&lt;\lambda_1&lt;\lambda_2&lt;\cdots$ 是递增的整数且满足 $P=(E-f)^d$, 这样便直接找到了多项式 $P$ 的根.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/05/%E4%BB%A3%E6%95%B0__%E5%85%B3%E4%BA%8E%E5%BD%A2%E5%BC%8F%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E4%BB%A3%E6%95%B0%E9%97%AD%E5%8C%85/" data-id="clchux35l0000twv2e9hx4nfo" data-title="代数__关于形式幂级数的代数闭包" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Method-Valuation/" rel="tag">Method__Valuation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Type-Alegebra/" rel="tag">Type__Alegebra</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/01/04/%E4%BB%A3%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88__%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%8D%E8%83%BD%E5%88%86%E6%88%90%E5%A5%87%E6%95%B0%E4%B8%AA%E9%9D%A2%E7%A7%AF%E7%9B%B8%E7%AD%89%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">代数与组合__一个正方形不能分成奇数个面积相等的三角形</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chitchat/" rel="tag">Chitchat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma/" rel="tag">Lemma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma-Sperner-s-Lemma/" rel="tag">Lemma__Sperner&#39;s Lemma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma-Zorn-s-Lemma/" rel="tag">Lemma__Zorn&#39;s Lemma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Method-Valuation/" rel="tag">Method__Valuation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem/" rel="tag">Theorem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem-Monsky-s-Theorem/" rel="tag">Theorem__Monsky&#39;s Theorem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem-Sylvester-N-Theorem/" rel="tag">Theorem__Sylvester(N) Theorem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travel-Notes/" rel="tag">Travel Notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Alegebra/" rel="tag">Type__Alegebra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Algebra/" rel="tag">Type__Algebra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Combinatorics/" rel="tag">Type__Combinatorics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Number-Theory/" rel="tag">Type__Number Theory</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Chitchat/" style="font-size: 10px;">Chitchat</a> <a href="/tags/Lemma/" style="font-size: 20px;">Lemma</a> <a href="/tags/Lemma-Sperner-s-Lemma/" style="font-size: 10px;">Lemma__Sperner's Lemma</a> <a href="/tags/Lemma-Zorn-s-Lemma/" style="font-size: 10px;">Lemma__Zorn's Lemma</a> <a href="/tags/Method-Valuation/" style="font-size: 20px;">Method__Valuation</a> <a href="/tags/Theorem/" style="font-size: 10px;">Theorem</a> <a href="/tags/Theorem-Monsky-s-Theorem/" style="font-size: 10px;">Theorem__Monsky's Theorem</a> <a href="/tags/Theorem-Sylvester-N-Theorem/" style="font-size: 10px;">Theorem__Sylvester(N) Theorem</a> <a href="/tags/Travel-Notes/" style="font-size: 10px;">Travel Notes</a> <a href="/tags/Type-Alegebra/" style="font-size: 10px;">Type__Alegebra</a> <a href="/tags/Type-Algebra/" style="font-size: 10px;">Type__Algebra</a> <a href="/tags/Type-Combinatorics/" style="font-size: 10px;">Type__Combinatorics</a> <a href="/tags/Type-Number-Theory/" style="font-size: 20px;">Type__Number Theory</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/05/%E4%BB%A3%E6%95%B0__%E5%85%B3%E4%BA%8E%E5%BD%A2%E5%BC%8F%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E4%BB%A3%E6%95%B0%E9%97%AD%E5%8C%85/">代数__关于形式幂级数的代数闭包</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/04/%E4%BB%A3%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88__%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%8D%E8%83%BD%E5%88%86%E6%88%90%E5%A5%87%E6%95%B0%E4%B8%AA%E9%9D%A2%E7%A7%AF%E7%9B%B8%E7%AD%89%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2/">代数与组合__一个正方形不能分成奇数个面积相等的三角形</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/04/%E6%95%B0%E8%AE%BA__Sylvester%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E%E5%8F%8A%E5%BA%94%E7%94%A8/">数论__Sylvester定理的证明及应用</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/03/%E6%95%B0%E8%AE%BA__2011N2%E7%9A%84%E5%BC%95%E7%90%86%E7%9A%84%E8%8B%A5%E5%B9%B2%E5%BA%94%E7%94%A8/">数论__2011N2的引理的若干应用</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/02/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Codecode<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+//<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>
