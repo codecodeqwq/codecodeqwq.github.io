@@ -14,7 +14,7 @@
 <meta property="og:description" content="复数域上”变量为 $t$ 的形式幂级数集合”定义为  K&#x3D;\mathbb{C}((t))&#x3D;\left\{\sum_{m&#x3D;{m_{0}}}^{\infty}a_mt^m\mid m_0\in\mathbb{Z},a_m\in\mathbb{C}\right\}.其中求和对全体不小于 $m_0$ 的整数求和, 在这个集合上可以定义显然的加法和乘法, 加法即为逐项相加, 乘法为展开后再求和. 类似地我们">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-04T16:04:29.000Z">
-<meta property="article:modified_time" content="2023-01-04T16:15:39.053Z">
+<meta property="article:modified_time" content="2023-01-05T03:46:24.875Z">
 <meta property="article:author" content="Codecode">
 <meta property="article:tag" content="Method__Valuation">
 <meta property="article:tag" content="Type__Alegebra">
@@ -102,14 +102,14 @@
 K=\mathbb{C}((t))=\left\{\sum_{m={m_{0}}}^{\infty}a_mt^m\mid m_0\in\mathbb{Z},a_m\in\mathbb{C}\right\}.</script><p>其中求和对全体不小于 $m_0$ 的整数求和, 在这个集合上可以定义显然的加法和乘法, 加法即为逐项相加, 乘法为展开后再求和. 类似地我们也可以对正整数 $n$ 定义”变量为 $t^{\frac{1}{n}}$ 的形式幂级数集合”</p>
 <script type="math/tex; mode=display">
 K_n=\mathbb{C}((t^{\frac{1}{n}}))=\left\{\sum_{m={m_{0}}}^{\infty}a_mt^{\frac{m}{n}}\mid m_0\in\mathbb{Z},a_m\in\mathbb{C}\right\}.</script><p>这将在之后的叙述中用到.</p>
-<p><strong>特别注意</strong>, 这里的形式幂级数可能不同于通常的定义——即并不是从第 $0$ 项开始, 而是允许有限个负数项.</p>
+<p><strong>特别注意</strong>, 这里的形式幂级数可能不同于通常的定义——即并不是从第 $0$ 项开始, 而是允许有限个负数项.<span id="more"></span></p>
 <hr>
 <p>我们首先要说明集合 $\mathbb{C}((t))$ 事实上是一个域, 这只需要验证<strong>每个非零元都有逆</strong>, 除此之外的成为域的其它要求都是显然的. </p>
 <p>为此考虑某个非零元 $\;a=\sum\limits_{m=s}^{\infty}a_mt^m(a_{s}\neq 0)$, 待定系数 $b_i(i\geq t)$ 来使得 $b=\sum\limits_{i=t}^{\infty}b_it^i$ 是它的逆. 只需要依次取 </p>
 <script type="math/tex; mode=display">
 t=-s,\quad b_{t}=a_{s}^{-1},\quad b_{t+i}=-a_{s}^{-1}(b_{t+i-1}a_{s+1}+b_{t+i-2}a_{s+2}+\cdots+b_{t}a_{s+i}),</script><p>就找到了这样的 $b=a^{-1}$, 故 $\mathbb{C}((t))$ 是域.</p>
 <hr>
-<p><strong>本文旨在说明: 域 $K=\mathbb{C}((t))$ 的代数闭包 $\overline{K}$ 就是 $\bigcup_{n=1}^{\infty}K_n$</strong>, 即证明如下的结论</p>
+<p><font color='red'>本文旨在说明: 域 $K=\mathbb{C}((t))$ 的代数闭包 $\overline{K}$ 就是 $\bigcup_{n=1}^{\infty}K_n$,</font> 即证明如下的结论</p>
 <blockquote>
 <p align="left"><diy style="font-size: 16px">定理: 对任意多项式 $T^d+a_{1}T^{d-1}+\cdots+a_{d-1}T+a_d\in K[T]$ 都存在正整数 $n$, 使得它有一个根在 $K_n$ 中.</diy></p>
 
@@ -117,9 +117,10 @@ t=-s,\quad b_{t}=a_{s}^{-1},\quad b_{t+i}=-a_{s}^{-1}(b_{t+i-1}a_{s+1}+b_{t+i-2}
 <p>为此先做一些准备工作. </p>
 <p>在 $K$ 上可以定义一个赋值 $v:K\rightarrow\mathbb{Z}\cup\{\infty\}$, 满足</p>
 <script type="math/tex; mode=display">
-v(0)=\infty,\quad  f=\sum_{i\geq m}a_iz^i(a_m\neq 0) \;\;\Leftrightarrow\;\; v(f)=m</script><p>我们指出这一赋值满足 $v(fg)=v(f)v(g)$ 且 $v(f+g)\geq \min\{v(f),v(g)\}$. 这一赋值可以按如下方式保持性质地拓展到每个 $K_n$ 中, 即 $v:K_n\rightarrow\tfrac{1}{n}\mathbb{Z}\cup\{\infty\}$ 满足</p>
+v(0)=\infty,\quad  f=\sum_{i\geq m}a_iz^i(a_m\neq 0) \;\;\Leftrightarrow\;\; v(f)=m</script><p>我们指出这一赋值满足 $v(fg)=v(f)+v(g)$ 且 $v(f+g)\geq \min\{v(f),v(g)\}$. 这一赋值可以按如下方式保持性质地拓展到每个 $K_n$ 中, 即 $v:K_n\rightarrow\tfrac{1}{n}\mathbb{Z}\cup\{\infty\}$ 满足</p>
 <script type="math/tex; mode=display">
-f=\sum\limits_{\mu\geq\lambda,n\mu\in\mathbb{Z}}a_{\mu}z^{\mu}(a_\lambda\neq 0)\;\;\Leftrightarrow \;\; v(f)=\lambda.</script><p>最后我们得到了在整个 $\overline{K}$ 上的赋值 $v:\overline{K}\rightarrow\mathbb{Q}\cup\{\infty\}$. 进一步地, 记 $O_n=\mathbb{C}[[z^{1/n}]]=\{f\in K_n|v(f)\geq 0\}$ 以及 $O=\{f\in K|v(f)\geq 0\}$, 则容易发现它们是环且商域分别是 $K_n$ 和 $K$. 元素 $\pi:=z^{1/n}\in O_n$ 是唯一的极大理想且 $O_n/\pi O_n=\mathbb{C}$.</p>
+f=\sum\limits_{\mu\geq\lambda,n\mu\in\mathbb{Z}}a_{\mu}z^{\mu}(a_\lambda\neq 0)\;\;\Leftrightarrow \;\; v(f)=\lambda.</script><p>最后我们得到了在整个 $\overline{K}$ 上的赋值 $v:\overline{K}\rightarrow\mathbb{Q}\cup\{\infty\}$. 这个赋值本质上是非 $\text{Archimedes}$ 实赋值, 因为按如下方式得到的 $\varphi:\overline{K}\mapsto \mathbb{R}_{\geq 0}$ 就是非阿基米德实赋值: $\varphi(f):=e^{-v(f)}$. </p>
+<p>进一步地, 记 $O_n=\mathbb{C}[[z^{1/n}]]=\{f\in K_n|v(f)\geq 0\}$ 以及 $O=\{f\in K|v(f)\geq 0\}$, 则容易发现它们是环且商域分别是 $K_n$ 和 $K$. 元素 $\pi:=z^{1/n}\in O_n$ 是唯一的极大理想且 $O_n/\pi O_n=\mathbb{C}$. 这里的 $O$ 即所谓的赋值环.</p>
 <p>称环 $O_n$ 上的某个多项式 $P$ 的 <strong>约化(reduction)</strong> 是指各项系数模 $\pi$ 得到的(即只考虑各系数的常数项作为新的系数的)复系数多项式, 用 $\overline{P}$ 记之.</p>
 <p>接下来正式证明此结论.</p>
 <hr>
@@ -159,6 +160,15 @@ f:=c_0+c_1z^{\lambda_1}+c_2z^{\lambda_2}+\cdots,</script><p>其中 $0&lt;\lambda
     
 <nav id="article-nav">
   
+    <a href="/2023/01/07/%E5%87%A0%E4%BD%95__Ehrhart%E5%AE%9A%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          几何__Ehrhart多项式
+        
+      </div>
+    </a>
+  
   
     <a href="/2023/01/04/%E4%BB%A3%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88__%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%96%B9%E5%BD%A2%E4%B8%8D%E8%83%BD%E5%88%86%E6%88%90%E5%A5%87%E6%95%B0%E4%B8%AA%E9%9D%A2%E7%A7%AF%E7%9B%B8%E7%AD%89%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
@@ -182,7 +192,7 @@ f:=c_0+c_1z^{\lambda_1}+c_2z^{\lambda_2}+\cdots,</script><p>其中 $0&lt;\lambda
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chitchat/" rel="tag">Chitchat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma/" rel="tag">Lemma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma-Sperner-s-Lemma/" rel="tag">Lemma__Sperner&#39;s Lemma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma-Zorn-s-Lemma/" rel="tag">Lemma__Zorn&#39;s Lemma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Method-Valuation/" rel="tag">Method__Valuation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem/" rel="tag">Theorem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem-Monsky-s-Theorem/" rel="tag">Theorem__Monsky&#39;s Theorem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem-Sylvester-N-Theorem/" rel="tag">Theorem__Sylvester(N) Theorem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travel-Notes/" rel="tag">Travel Notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Alegebra/" rel="tag">Type__Alegebra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Algebra/" rel="tag">Type__Algebra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Combinatorics/" rel="tag">Type__Combinatorics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Number-Theory/" rel="tag">Type__Number Theory</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chitchat/" rel="tag">Chitchat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma/" rel="tag">Lemma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma-2011N2/" rel="tag">Lemma__2011N2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma-Sperner-s-Lemma/" rel="tag">Lemma__Sperner&#39;s Lemma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lemma-Zorn-s-Lemma/" rel="tag">Lemma__Zorn&#39;s Lemma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Method/" rel="tag">Method</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Method-Ehrhart-polynomial/" rel="tag">Method__Ehrhart polynomial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Method-Valuation/" rel="tag">Method__Valuation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem/" rel="tag">Theorem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem-Bertrand-s-Postulate/" rel="tag">Theorem__Bertrand&#39;s Postulate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem-Ehrhart/" rel="tag">Theorem__Ehrhart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem-Monsky-s-Theorem/" rel="tag">Theorem__Monsky&#39;s Theorem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Theorem-Sylvester-N-Theorem/" rel="tag">Theorem__Sylvester(N) Theorem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travel-Notes/" rel="tag">Travel Notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Alegebra/" rel="tag">Type__Alegebra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Algebra/" rel="tag">Type__Algebra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Combinatorics/" rel="tag">Type__Combinatorics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Geometry/" rel="tag">Type__Geometry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Type-Number-Theory/" rel="tag">Type__Number Theory</a></li></ul>
     </div>
   </div>
 
@@ -192,7 +202,7 @@ f:=c_0+c_1z^{\lambda_1}+c_2z^{\lambda_2}+\cdots,</script><p>其中 $0&lt;\lambda
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Chitchat/" style="font-size: 10px;">Chitchat</a> <a href="/tags/Lemma/" style="font-size: 20px;">Lemma</a> <a href="/tags/Lemma-Sperner-s-Lemma/" style="font-size: 10px;">Lemma__Sperner's Lemma</a> <a href="/tags/Lemma-Zorn-s-Lemma/" style="font-size: 10px;">Lemma__Zorn's Lemma</a> <a href="/tags/Method-Valuation/" style="font-size: 20px;">Method__Valuation</a> <a href="/tags/Theorem/" style="font-size: 10px;">Theorem</a> <a href="/tags/Theorem-Monsky-s-Theorem/" style="font-size: 10px;">Theorem__Monsky's Theorem</a> <a href="/tags/Theorem-Sylvester-N-Theorem/" style="font-size: 10px;">Theorem__Sylvester(N) Theorem</a> <a href="/tags/Travel-Notes/" style="font-size: 10px;">Travel Notes</a> <a href="/tags/Type-Alegebra/" style="font-size: 10px;">Type__Alegebra</a> <a href="/tags/Type-Algebra/" style="font-size: 10px;">Type__Algebra</a> <a href="/tags/Type-Combinatorics/" style="font-size: 10px;">Type__Combinatorics</a> <a href="/tags/Type-Number-Theory/" style="font-size: 20px;">Type__Number Theory</a>
+      <a href="/tags/Chitchat/" style="font-size: 10px;">Chitchat</a> <a href="/tags/Lemma/" style="font-size: 20px;">Lemma</a> <a href="/tags/Lemma-2011N2/" style="font-size: 10px;">Lemma__2011N2</a> <a href="/tags/Lemma-Sperner-s-Lemma/" style="font-size: 10px;">Lemma__Sperner's Lemma</a> <a href="/tags/Lemma-Zorn-s-Lemma/" style="font-size: 10px;">Lemma__Zorn's Lemma</a> <a href="/tags/Method/" style="font-size: 10px;">Method</a> <a href="/tags/Method-Ehrhart-polynomial/" style="font-size: 10px;">Method__Ehrhart polynomial</a> <a href="/tags/Method-Valuation/" style="font-size: 15px;">Method__Valuation</a> <a href="/tags/Theorem/" style="font-size: 20px;">Theorem</a> <a href="/tags/Theorem-Bertrand-s-Postulate/" style="font-size: 10px;">Theorem__Bertrand's Postulate</a> <a href="/tags/Theorem-Ehrhart/" style="font-size: 10px;">Theorem__Ehrhart</a> <a href="/tags/Theorem-Monsky-s-Theorem/" style="font-size: 10px;">Theorem__Monsky's Theorem</a> <a href="/tags/Theorem-Sylvester-N-Theorem/" style="font-size: 10px;">Theorem__Sylvester(N) Theorem</a> <a href="/tags/Travel-Notes/" style="font-size: 10px;">Travel Notes</a> <a href="/tags/Type-Alegebra/" style="font-size: 10px;">Type__Alegebra</a> <a href="/tags/Type-Algebra/" style="font-size: 10px;">Type__Algebra</a> <a href="/tags/Type-Combinatorics/" style="font-size: 10px;">Type__Combinatorics</a> <a href="/tags/Type-Geometry/" style="font-size: 10px;">Type__Geometry</a> <a href="/tags/Type-Number-Theory/" style="font-size: 15px;">Type__Number Theory</a>
     </div>
   </div>
 
@@ -201,7 +211,7 @@ f:=c_0+c_1z^{\lambda_1}+c_2z^{\lambda_2}+\cdots,</script><p>其中 $0&lt;\lambda
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2099/12/">十二月 2099</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li></ul>
     </div>
   </div>
 
@@ -214,6 +224,14 @@ f:=c_0+c_1z^{\lambda_1}+c_2z^{\lambda_2}+\cdots,</script><p>其中 $0&lt;\lambda
       <ul>
         
           <li>
+            <a href="/2099/12/31/%E7%BD%AE%E9%A1%B6%201/">【置顶】 关于我和此博客</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/07/%E5%87%A0%E4%BD%95__Ehrhart%E5%AE%9A%E7%90%86/">几何__Ehrhart多项式</a>
+          </li>
+        
+          <li>
             <a href="/2023/01/05/%E4%BB%A3%E6%95%B0__%E5%85%B3%E4%BA%8E%E5%BD%A2%E5%BC%8F%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E4%BB%A3%E6%95%B0%E9%97%AD%E5%8C%85/">代数__关于形式幂级数的代数闭包</a>
           </li>
         
@@ -223,14 +241,6 @@ f:=c_0+c_1z^{\lambda_1}+c_2z^{\lambda_2}+\cdots,</script><p>其中 $0&lt;\lambda
         
           <li>
             <a href="/2023/01/04/%E6%95%B0%E8%AE%BA__Sylvester%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E%E5%8F%8A%E5%BA%94%E7%94%A8/">数论__Sylvester定理的证明及应用</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/03/%E6%95%B0%E8%AE%BA__2011N2%E7%9A%84%E5%BC%95%E7%90%86%E7%9A%84%E8%8B%A5%E5%B9%B2%E5%BA%94%E7%94%A8/">数论__2011N2的引理的若干应用</a>
-          </li>
-        
-          <li>
-            <a href="/2023/01/02/hello-world/">Hello World</a>
           </li>
         
       </ul>
